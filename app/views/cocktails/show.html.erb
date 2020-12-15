@@ -1,0 +1,23 @@
+<p>
+  <strong>What's the name ?</strong>
+  <%= @cocktail.name %>
+</p>
+
+
+<ul class="list-groupe">
+    <% @cocktail.ingredients.each do |ingredient|%>
+    <li class="list-group-item"> <%= ingredient.name %></li>
+    <% end %>
+</ul>
+
+
+
+<h3><%= link_to "Edit this cocktail", edit_cocktail_path %></h3>
+<h3><%= link_to "Back to all cocktails", cocktails_path %></h3>
+<h3><%= link_to "Delete", 
+      cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></h3>
+
+
+
