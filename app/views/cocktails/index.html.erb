@@ -1,19 +1,16 @@
-
-
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/home/felix/code/felixdpth/rails-mister-cocktail/app/assets/images/cocktail.jpg');">
   <div class="banner-content">
     <h1>All our Cocktails (<%= (Cocktail.all.count) %>)</h1>
-    <p>Awesome beverages for developers nightlife</p>
-    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
+    <p>👇 Get a drink - our best here 👇</p>
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <% @cocktails.each do |cocktail| %>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
-          <div class="class-description">
+          <div class="card-description">
           <h2><%= cocktail.name %></h2>
           </div>
             <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
@@ -25,7 +22,7 @@
 
 
 
-<h1>
+<h1 class="bnt-primary mt-5">
 <%= link_to new_cocktail_path do %>
   <i class="fa fa-plus">Add a Cockail</i> 
 <% end %>
